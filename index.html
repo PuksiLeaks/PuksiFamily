@@ -3,176 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PuksiFamily.gg - Premium Products</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>PuksiShop.GG - Premium EUP Keys, EXE Files & FiveM Servers</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
         :root {
-            --primary-color: #6a0dad;
-            --secondary-color: #9b59b6;
-            --accent-color: #8e44ad;
-            --dark-color: #2c0b4a;
-            --light-color: #f5e6ff;
-            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            --primary: #8a2be2;
+            --primary-dark: #5a1a9a;
+            --primary-light: #b57edc;
+            --accent: #ff00ff;
+            --text: #ffffff;
+            --text-dark: #e0e0e0;
+            --bg: #0f0a1a;
+            --discord: #5865F2;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         
         body {
-            background-color: #0f051d;
-            color: white;
+            background-color: var(--bg);
+            color: var(--text);
             overflow-x: hidden;
-            position: relative;
+            min-height: 100vh;
         }
         
-        body::before {
-            content: '';
+        .bg-animation {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 30%, rgba(106, 13, 173, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(155, 89, 182, 0.15) 0%, transparent 50%);
             z-index: -1;
-            animation: pulse 15s infinite alternate;
+            overflow: hidden;
         }
         
-        @keyframes pulse {
-            0% {
-                opacity: 0.8;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.05);
-            }
-            100% {
-                opacity: 0.8;
-                transform: scale(1);
-            }
-        }
-        
-        .floating-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: linear-gradient(135deg, #0f051d 0%, #1a0933 50%, #0f051d 100%);
-        }
-        
-        .purple-circle {
+        .bg-animation div {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, var(--primary-color), transparent 70%);
-            filter: blur(30px);
+            background: radial-gradient(circle, var(--primary-light), transparent);
             opacity: 0.3;
-            animation: float 15s infinite ease-in-out;
+            animation: float 15s infinite linear;
         }
         
-        .circle-1 {
+        .bg-animation div:nth-child(1) {
             width: 300px;
             height: 300px;
-            top: -50px;
-            left: -50px;
+            top: 20%;
+            left: 10%;
             animation-delay: 0s;
         }
         
-        .circle-2 {
-            width: 400px;
-            height: 400px;
-            bottom: -100px;
-            right: -100px;
-            animation-delay: 3s;
-        }
-        
-        .circle-3 {
+        .bg-animation div:nth-child(2) {
             width: 200px;
             height: 200px;
+            top: 60%;
+            left: 25%;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+        
+        .bg-animation div:nth-child(3) {
+            width: 400px;
+            height: 400px;
             top: 40%;
-            right: 10%;
-            animation-delay: 6s;
+            left: 70%;
+            animation-delay: 4s;
+            animation-duration: 18s;
+        }
+        
+        .bg-animation div:nth-child(4) {
+            width: 250px;
+            height: 250px;
+            top: 80%;
+            left: 80%;
+            animation-delay: 1s;
+            animation-duration: 14s;
+        }
+        
+        .bg-animation div:nth-child(5) {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: 85%;
+            animation-delay: 3s;
+            animation-duration: 10s;
         }
         
         @keyframes float {
-            0%, 100% {
-                transform: translate(0, 0);
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(50px, 50px) rotate(90deg);
             }
             50% {
-                transform: translate(20px, 20px);
+                transform: translate(100px, 0) rotate(180deg);
+            }
+            75% {
+                transform: translate(50px, -50px) rotate(270deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
             }
         }
         
         header {
-            background: rgba(15, 5, 29, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 5%;
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed;
-            width: 100%;
+            background: rgba(15, 10, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--primary);
+            position: sticky;
             top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(106, 13, 173, 0.3);
+            z-index: 100;
         }
         
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+        
+        .logo h1 {
             font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .logo:hover {
-            color: var(--secondary-color);
-            transform: scale(1.05);
-        }
-        
-        .logo span {
-            background: var(--gradient);
+            background: linear-gradient(to right, var(--primary), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            font-weight: 700;
+        }
+        
+        .logo .gg {
+            color: var(--text);
+            font-weight: 300;
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 30px;
         }
         
         nav a {
-            color: white;
+            color: var(--text-dark);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
-            padding: 0.5rem 0;
         }
         
         nav a:hover {
-            color: var(--secondary-color);
+            color: var(--text);
         }
         
         nav a::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gradient);
+            background: linear-gradient(to right, var(--primary), var(--accent));
             transition: width 0.3s ease;
         }
         
@@ -180,57 +178,97 @@
             width: 100%;
         }
         
-        .cta-button {
-            background: var(--gradient);
-            color: white;
-            border: none;
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .discord-btn {
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 15px rgba(106, 13, 173, 0.4);
+            padding: 8px 16px;
+            background-color: var(--discord);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-left: 20px;
         }
         
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(106, 13, 173, 0.6);
+        .discord-btn:hover {
+            background-color: #4752c4;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+        }
+        
+        .discord-btn i {
+            font-size: 1.2rem;
         }
         
         .hero {
-            padding: 10rem 5% 5rem;
+            padding: 80px 5%;
             text-align: center;
             position: relative;
         }
         
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, white, var(--light-color));
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            animation: fadeIn 1s ease;
         }
         
         .hero p {
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-dark);
+            max-width: 800px;
+            margin: 0 auto 40px;
             line-height: 1.6;
+            animation: fadeIn 1.5s ease;
         }
         
-        .products-section {
-            padding: 5rem 5%;
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.6);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .products {
+            padding: 60px 5%;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 50px;
             font-size: 2.5rem;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             position: relative;
             display: inline-block;
             left: 50%;
@@ -244,363 +282,476 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: var(--gradient);
+            background: linear-gradient(to right, var(--primary), var(--accent));
             border-radius: 3px;
         }
         
-        .products-grid {
+        .product-categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .category-btn {
+            padding: 10px 25px;
+            background: rgba(138, 43, 226, 0.2);
+            color: var(--text);
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+        }
+        
+        .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 30px;
         }
         
         .product-card {
-            background: rgba(30, 10, 50, 0.6);
+            background: rgba(30, 20, 50, 0.6);
             border-radius: 15px;
             overflow: hidden;
             transition: all 0.3s ease;
-            border: 1px solid rgba(106, 13, 173, 0.3);
+            border: 1px solid rgba(138, 43, 226, 0.3);
             backdrop-filter: blur(10px);
-            padding: 1.5rem;
         }
         
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(106, 13, 173, 0.3);
-            border-color: var(--accent-color);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.3);
+            border-color: var(--primary);
         }
         
-        .product-info {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+        .product-header {
+            padding: 20px;
+            background: rgba(138, 43, 226, 0.1);
+            border-bottom: 1px solid rgba(138, 43, 226, 0.3);
         }
         
         .product-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--text);
         }
         
-        .product-description {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1rem;
+        .product-subtitle {
             font-size: 0.9rem;
-            line-height: 1.5;
-            flex-grow: 1;
+            color: var(--text-dark);
+        }
+        
+        .product-body {
+            padding: 20px;
         }
         
         .product-price {
-            font-size: 1.2rem;
+            font-size: 2rem;
             font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
+            color: var(--primary-light);
         }
         
-        .purchase-options {
+        .product-price span {
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+        
+        .product-features {
+            margin-bottom: 20px;
+        }
+        
+        .product-features li {
+            list-style: none;
+            padding: 5px 0;
             display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .purchase-option {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem;
-            background: rgba(106, 13, 173, 0.2);
-            border-radius: 5px;
-        }
-        
-        .option-name {
-            font-size: 0.9rem;
-        }
-        
-        .option-price {
-            font-weight: 600;
-            color: var(--secondary-color);
-        }
-        
-        .product-button {
-            display: inline-block;
-            background: var(--gradient);
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            text-align: center;
-        }
-        
-        .product-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(106, 13, 173, 0.4);
-        }
-        
-        .discord-section {
-            padding: 5rem 5%;
-            text-align: center;
-            background: rgba(30, 10, 50, 0.3);
-            margin: 3rem 0;
-            border-top: 1px solid rgba(106, 13, 173, 0.3);
-            border-bottom: 1px solid rgba(106, 13, 173, 0.3);
-        }
-        
-        .discord-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .discord-section p {
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-        }
-        
-        .discord-button {
-            background: #5865F2;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
         }
         
-        .discord-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6);
-            background: #4752c4;
+        .product-features li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .product-options {
+            margin-bottom: 20px;
+        }
+        
+        .option-select {
+            width: 100%;
+            padding: 10px 15px;
+            background: rgba(138, 43, 226, 0.2);
+            border: 1px solid var(--primary);
+            border-radius: 5px;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+        
+        .buy-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .buy-btn:hover {
+            background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(138, 43, 226, 0.4);
         }
         
         footer {
-            background: rgba(15, 5, 29, 0.9);
-            padding: 3rem 5%;
+            padding: 40px 5%;
+            background: rgba(15, 10, 26, 0.8);
+            border-top: 1px solid var(--primary);
             text-align: center;
-            border-top: 1px solid rgba(106, 13, 173, 0.3);
+            margin-top: 60px;
         }
         
         .footer-logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            display: inline-block;
         }
         
-        .social-links {
+        .footer-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 30px;
+            margin-bottom: 20px;
         }
         
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
+        .footer-links a {
+            color: var(--text-dark);
+            text-decoration: none;
             transition: all 0.3s ease;
         }
         
-        .social-links a:hover {
-            color: var(--secondary-color);
-            transform: translateY(-3px);
+        .footer-links a:hover {
+            color: var(--text);
         }
         
         .copyright {
-            color: rgba(255, 255, 255, 0.5);
+            color: var(--text-dark);
             font-size: 0.9rem;
         }
         
+        /* Responsive styles */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                padding: 1rem 5%;
+                gap: 20px;
             }
             
             nav ul {
-                margin: 1rem 0;
+                gap: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
             
-            .hero h1 {
-                font-size: 2.5rem;
+            .hero h2 {
+                font-size: 2.2rem;
             }
             
-            .products-grid {
+            .product-categories {
+                flex-wrap: wrap;
+            }
+            
+            .product-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
+    <!-- Font Awesome for Discord icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="floating-bg"></div>
-    <div class="purple-circle circle-1"></div>
-    <div class="purple-circle circle-2"></div>
-    <div class="purple-circle circle-3"></div>
+    <div class="bg-animation">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
     
     <header>
-        <a href="#" class="logo">Puksi<span>Family</span>.gg</a>
+        <div class="logo">
+            <h1>PuksiShop<span class="gg">.GG</span></h1>
+        </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#products">Products</a></li>
+                <li><a href="#eup">Packages</a></li>
+                <li><a href="#exe">Apps/Exe</a></li>
+                <li><a href="#fivem">FiveM Servers</a></li>
+                <li><a href="https://discord.gg/E3mhdkBvYv" class="discord-btn" target="_blank">
+                    <i class="fab fa-discord"></i>
+                    Discord
+                </a></li>
             </ul>
         </nav>
-        <a href="https://discord.gg/E3mhdkBvYv" class="cta-button" target="_blank">
-            <i class="fab fa-discord"></i> Join Discord
-        </a>
     </header>
     
-    <section class="hero">
-        <h1>Premium Products for Gamers</h1>
-        <p>Discover our exclusive collection of high-quality gaming products designed to enhance your experience and give you the competitive edge.</p>
-        <a href="#products" class="cta-button">Explore Products</a>
+    <section class="hero" id="home">
+        <h2>PuksiShop.GG</h2>
+        <p>Welcome to PuksiShop.GG - We Make FiveM VRP servers - Apps - EXE - EUP Keys - 24/7 Support</p>
+        <a href="#products" class="cta-button">Shop Now</a>
     </section>
     
-    <section class="products-section" id="products">
+    <section class="products" id="products">
         <h2 class="section-title">Our Products</h2>
-        <div class="products-grid" id="products-container">
-            <!-- Products will be dynamically inserted here by JavaScript -->
+        
+        <div class="product-categories">
+            <button class="category-btn active" data-category="all">All Products</button>
+            <button class="category-btn" data-category="eup">EUP Keys</button>
+            <button class="category-btn" data-category="exe">EXE Files</button>
+            <button class="category-btn" data-category="fivem">FiveM Servers</button>
         </div>
-    </section>
-    
-    <section class="discord-section">
-        <h2>Join Our Community</h2>
-        <p>Connect with other gamers, get support, and stay updated on our latest products and offers by joining our Discord server.</p>
-        <a href="https://discord.gg/E3mhdkBvYv" class="discord-button" target="_blank">
-            <i class="fab fa-discord"></i> Join Our Discord
-        </a>
-    </section>
+        
+        
+            <!-- app File 3 -->
+            <div class="product-card" data-category="exe">
+                <div class="product-header">
+                    <h3 class="product-title">LifeTime Apps Access</h3>
+                    <p class="product-subtitle">All-in-One Package</p>
+                </div>
+                <div class="product-body">
+                    <div class="product-price">$29.99 <span>/Lifetime</span></div>
+                    <ul class="product-features">
+                        <li>Lifetime access to all apps files Also the upcoming Apps</li>
+                        <li>Exclusive support</li>
+                        <li>Premium + 8 Months Free</li>
+                        <li>Commercial license</li>
+                        <li>Exclusive updates</li>
+                    </ul>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option>Select Time</option>
+                            <option>1+ Month</option>
+                            <option>10+ Months</option>
+                            <option>LifeTime</option>
+                        </select>
+                        <select class="option-select">
+                            <option>Select Support Level</option>
+                            <option>Standard Support</option>
+                            <option>Priority Support (+$20)</option>
+                            <option>Dedicated Support (+$50)</option>
+                        </select>
+                    </div>
+                    <button class="buy-btn" onclick="window.location.href='https://discord.gg/E3mhdkBvYv'">Buy On Discord</button>
+                </div>
+            </div>
+
+
+<!-- FiveM Server 2 -->
+<div class="product-card" data-category="fivem">
+    <div class="product-header">
+        <h3 class="product-title">VRP FiveM Development</h3>
+        <p class="product-subtitle">Platinium Package</p>
+    </div>
+    <div class="product-body">
+        <div class="product-price">$19.99 <span>/month</span></div>
+        <ul class="product-features">
+            <li>BeniteHUD</li>
+            <li>25+ Ymaps</li>
+            <li>PauseMenu</li>
+            <li>BlackMarket</li>
+            <li>Advanced VRP setup</li>
+            <li>Custom scripts</li>
+            <li>Priority support</li>
+            <li>Daily Development</li>
+            <li>Dedicated resources</li>
+            <li>Cars</li>
+            <li>EUP</li>
+            <li>24/7 Help</li>
+        </ul>
+        <div class="product-options">
+            <select class="option-select">
+                <option>Select Server Location</option>
+                <option>Europe</option>
+                <option>North America</option>
+                <option>Asia</option>
+            </select>
+            <select class="option-select">
+                <option>Select Add-ons</option>
+                <option>No Add-ons</option>
+                <option>40+ Ymaps (+$5/month)</option>
+                <option>Custom Files (+$10/month)</option>
+            </select>
+        </div>
+        <button class="buy-btn" onclick="window.location.href='https://discord.gg/E3mhdkBvYv'">Buy On Discord</button>
+    </div>
+</div>
+
+            
+            <!-- EXE File 1 -->
+            <div class="product-card" data-category="exe">
+                <div class="product-header">
+                    <h3 class="product-title">Lifetime PuksiBoost.GG</h3>
+                    <p class="product-subtitle">LifeTime Package</p>
+                </div>
+                <div class="product-body">
+                    <div class="product-price">$9.99 <span>/one-time</span></div>
+                    <ul class="product-features">
+                        <li>Lifetime access</li>
+                        <li>Fps Booster</li>
+                        <li>Nice Gui</li>
+                        <li>10+ Games</li>
+                        <li>App</li>
+                    </ul>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option>Standard</option>
+                            <option>Pro</option>
+                            <option>Premium</option>
+                            <option>Platinium</option>
+                        </select>
+                        <select class="option-select">
+                            <option>Select Option</option>
+                            <option>Personal Use</option>
+                            <option>Reselling (+$10)</option>
+                        </select>
+                    </div>
+                    <button class="buy-btn" onclick="window.location.href='https://discord.gg/E3mhdkBvYv'">Buy On Discord</button>
+                </div>
+            </div>
+            
+            <!-- EXE File 2 -->
+            <div class="product-card" data-category="exe">
+                <div class="product-header">
+                    <h3 class="product-title">App Making</h3>
+                    <p class="product-subtitle">Platinium Package</p>
+                </div>
+                <div class="product-body">
+                    <div class="product-price">$9.99 <span>/one-time</span></div>
+                    <ul class="product-features">
+                        <li>Make Your dream App</li>
+                        <li>Apps</li>
+                        <li>We will make you a Apps/EXE file</li>
+                        <li>24/7 support</li>
+                        <li>Up to 3 Apps</li>
+                        <li>Discord Button</li>
+                    </ul>
+                    <div class="product-options">
+                        <select class="option-select">
+                            <option>Select Version</option>
+                            <option>Standard</option>
+                            <option>Pro</option>
+                            <option>Platinium</option>
+                        </select>
+                        <select class="option-select">
+                            <option>Select Apps</option>
+                            <option>1 App</option>
+                            <option>3 Apps (+$3)</option>
+                            <option>5 Apps (+$5)</option>
+                        </select>
+                    </div>
+                    <button class="buy-btn" onclick="window.location.href='https://discord.gg/E3mhdkBvYv'">Buy On Discord</button>
+                </div>
+            </div>
+            
+            
+            
+        
     
     <footer>
-        <div class="footer-logo">PuksiFamily.gg</div>
-        <div class="social-links">
-            <a href="https://discord.gg/E3mhdkBvYv" target="_blank"><i class="fab fa-discord"></i></a>
+        <div class="footer-logo">PuksiShop.GG</div>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Support</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="https://discord.gg/E3mhdkBvYv" target="_blank">Discord</a>
         </div>
-        <div class="copyright">
-            &copy; 2023 PuksiFamily.gg. All rights reserved.
-        </div>
+        <p class="copyright">© 2023 PuksiShop.GG - All Rights Reserved</p>
     </footer>
     
     <script>
-        // Product data - Easy to add/remove products
-        const products = [
-            {
-                title: "Astros AntiVirus",
-                description: "Our most advanced AntiVirus",
-                prices: [
-                    { option: "1 Day", price: "Out Of Stock" },
-                    { option: "1 Week", price: "Out Of Stock" },
-                    { option: "1 Month", price: "Out Of Stock" },
-                    { option: "3 Months", price: "Out Of Stock" },
-                    { option: "Lifetime", price: "Free" }
-                ]
-            },
-            {
-                title: "PuksiBoost.GG",
-                description: "Our Best Booster For Games So Far Optimized configs for maximum performance and visual quality in your favorite games",
-                prices: [
-                    { option: "1 Day", price: "$3.99" },
-                    { option: "1 Week", price: "$5.99" },
-                    { option: "1 Month", price: "$12.99" },
-                    { option: "LifeTime", price: "$19.99" }
-                ]
-            },
-            {
-                title: "AstrosFps",
-                description: "Optimized configs for maximum performance and visual quality in your favorite games.",
-                prices: [
-                    { option: "1 Week", price: "$2.99" },
-                    { option: "1 Month", price: "$4.99" },
-                    { option: "LLifeTime", price: "$7.99" }
-                ]
-            },
-            {
-                title: "FiveM Server Develeping",
-                description: "A Fuly Costumized VRP FiveM Server With Packages Like BeniteHUD, PuseMenu, Ymaps, Cars, And F2 Inventory And Lots More.",
-                prices: [
-                    { option: "Basic VRP Server", price: "$4.99" },
-                    { option: "Gold VRP Server", price: "$12.99" },
-                    { option: "Platinium VRP Server", price: "$19.99" }
-                ]
-            },
-            {
-                title: "Custom GUI/HUDS",
-                description: "Custom HUDS/GUI",
-                prices: [
-                    { option: "Basic GUI", price: "$5.99" },
-                    { option: "Advanced GUI", price: "$9.99" },
-                    { option: "Premium GUI", price: "$12.99" }
-                ]
-            },
-            {
-                title: "Eup Keys",
-                description: "Eup Keys For FiveM Monthly",
-                prices: [
-                    { option: "64 Slots", price: "Out Of Stuck" },
-                    { option: "128 Slots", price: "Out Of Stuck" },
-                    { option: "456 Slots", price: "Out Of Stuck" },
-                    { option: "2028 Slots", price: "$65,99 Per Month" }
-                ]
-            }
-        ];
-        
-        // Function to render products
-        function renderProducts() {
-            const productsContainer = document.getElementById('products-container');
-            
-            products.forEach(product => {
-                const productCard = document.createElement('div');
-                productCard.className = 'product-card';
+        // Category filtering
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
                 
-                let priceOptions = '';
-                product.prices.forEach(price => {
-                    priceOptions += `
-                        <div class="purchase-option">
-                            <span class="option-name">${price.option}</span>
-                            <span class="option-price">${price.price}</span>
-                        </div>
-                    `;
+                const category = btn.dataset.category;
+                const products = document.querySelectorAll('.product-card');
+                
+                products.forEach(product => {
+                    if (category === 'all' || product.dataset.category === category) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
                 });
-                
-                productCard.innerHTML = `
-                    <div class="product-info">
-                        <h3 class="product-title">${product.title}</h3>
-                        <p class="product-description">${product.description}</p>
-                        <div class="purchase-options">
-                            ${priceOptions}
-                        </div>
-                        <a href="https://discord.gg/E3mhdkBvYv" class="product-button" target="_blank">Get Now</a>
-                    </div>
-                `;
-                
-                productsContainer.appendChild(productCard);
             });
-        }
+        });
         
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', function() {
-            renderProducts();
+        // Simple animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.product-card');
             
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animation
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.5s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Background animation enhancement
+        document.querySelectorAll('.bg-animation div').forEach((el, index) => {
+            // Randomize initial positions
+            const randomX = Math.random() * 80;
+            const randomY = Math.random() * 80;
+            el.style.left = `${randomX}%`;
+            el.style.top = `${randomY}%`;
+            
+            // Randomize animation duration
+            const duration = 15 + Math.random() * 15;
+            el.style.animationDuration = `${duration}s`;
+        });
+        
+        // Function to handle all "Buy On Discord" buttons
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                window.location.href = 'https://discord.gg/E3mhdkBvYv';
             });
         });
     </script>
